@@ -23,13 +23,16 @@ as well as the :func:`ezdxf.new` function::
 
         from qsketchmetric.renderer import Renderer
         from ezdxf import new
+        from ezdxf import units
 
 The first one will be used to render the parametric DXF file, the second one to create output
-:class:`ezdxf.document.Drawing`.
+:class:`ezdxf.document.Drawing` and the third one to set the units of the output drawing.
 
-Create an output :class:`ezdxf.document.Drawing` object using :func:`ezdxf.filemanagement.new` module::
+Create an output :class:`ezdxf.document.Drawing` object using :func:`ezdxf.filemanagement.new` module. Remember to
+set the units of the output drawing to millimeters as the parametric DXF file defaults to meters.::
 
         output_dxf = new()
+        output_dxf.units = units.MM
 
 Before we will render ``tutorial.dxf`` let's check it out in the `QCAD Professional <https://qcad.org/en/download>`_
 CAD software to see briefly what it looks like `(File -> Open)`. This is what you should see:
@@ -45,11 +48,11 @@ CAD software to see briefly what it looks like `(File -> Open)`. This is what yo
 We can see it is a parametric drawing of a chalice. To render, it needs variable ``h`` that stands for height of the
 chalice. Let's set it to ``50``::
 
-        variables = {'h': 50}
+        input_variables = {'h': 50}
 
 Now we are ready to roll. Let's render the parametric DXF file::
 
-        renderer = Renderer('tutorial.dxf', output_dxf, variables)
+        renderer = Renderer('tutorial.dxf', output_dxf, input_variables)
         renderer.render()
 
 Finally, save the output drawing::
@@ -62,8 +65,8 @@ The whole code should look like this::
         from ezdxf import new
 
         output_dxf = new()
-        variables = {'h': 50}
-        renderer = Renderer('tutorial.dxf', output_dxf, variables)
+        input_variables = {'h': 50}
+        renderer = Renderer('tutorial.dxf', output_dxf, input_variables)
         renderer.render()
         output_dxf.saveas('rendered_tutorial.dxf')
 

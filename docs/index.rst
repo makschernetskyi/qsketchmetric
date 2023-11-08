@@ -1,9 +1,13 @@
-.. qsketchmetric documentation master file, created by
+gitp.. qsketchmetric documentation master file, created by
    sphinx-quickstart on Sun Aug 20 14:22:12 2023.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-QSketchMetric's Documentation
+
+.. image:: https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/logo_QSM.png
+
+
+QSketchMetric Documentation
 =============================
 **Python 2D parametric DXF rendering engine.**
 
@@ -27,6 +31,9 @@ QSketchMetric's Documentation
 .. image:: https://codecov.io/gh/MadScrewdriver/qsketchmetric/graph/badge.svg?token=OBMRQRRHUQ
    :target: https://codecov.io/gh/MadScrewdriver/qsketchmetric
    :alt: codecov
+
+.. image:: https://img.shields.io/pypi/dm/qsketchmetric
+   :alt: PyPI - Downloads
 
 .. image:: https://img.shields.io/badge/License-MIT-yellow.svg
    :target: https://opensource.org/licenses/MIT

@@ -2,11 +2,23 @@
 Rendering a DXF file
 ====================
 
+0. Consider validating the DXF file before rendering it. This can be done by using the
+`QSketchMetric Validator <https://qsketchmetricvalidator.eu.pythonanywhere.com/>`_. See
+:ref:`<Validating a parameterized DXF file validator>` for more information.
+
 1. If don't have already, create a :class:`ezdxf.document.Drawing` object to which the renderer
    will render::
 
     from ezdxf import new
     output_dxf = new()
+
+.. warning::
+        Remember to make sure that the output and input DXF files are configured in the same units. If not, you can
+        change the units of the output DXF file by::
+
+            output_dxf.units = units.MM
+
+        `ezdxf <https://ezdxf.readthedocs.io/en/stable/>`_ by default uses meters as the unit of measurement.
 
 2. **(Optional)** Define the variables that are described in ``---- build in -----`` section of :ref:`MTEXT` entity::
 
@@ -21,6 +33,16 @@ Rendering a DXF file
         offset = (50, 50)
 
 5. Render the file::
+
+        from ezdxf import new
+        output_dxf = new()
+        output_dxf.units = units.MM
+
+        path = 'how_to_guide.dxf'
+
+        # Optional
+        variables = {'variable_name': 100}
+        offset = (50, 50)
 
         renderer = Renderer(
                             path,

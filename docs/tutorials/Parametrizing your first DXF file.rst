@@ -104,7 +104,7 @@ Now we can add parameters to the drawing. To do so select the entities one by on
   |      ``?``         | (undefined) Entity length will be calculated by the renderer.               |
   |                    | **Only if there is other path to the both end points of the line!**         |
   +--------------------+-----------------------------------------------------------------------------+
-  |  ``h*2``         | (math expression) Entity length will be calculated from the math expression |
+  |  ``c/h*2``         | (math expression) Entity length will be calculated from the math expression |
   |                    |                                                                             |
   +--------------------+-----------------------------------------------------------------------------+
 
@@ -132,5 +132,8 @@ Finished file should be simular to
 file, that you can
 `download <https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/DXF/tutorial.dxf>`_ from the
 `QSketchMetric repository <https://github.com/MadScrewdriver/qsketchmetric>`_.
+
+Lastly, we check if the parametrization is correct by validating it. To do so, follow the
+:ref:`Validation your first DXF file <validator-tutorial>` tutorial.
 
 **Congratulation you created your first parametric DXF file!**
